@@ -3,7 +3,6 @@ import domen.Bottle;
 import domen.HotDrink;
 import domen.Product;
 import services.CoinDispenser;
-import services.CoinDispenser;
 import services.Display;
 import services.Holder;
 import services.VendingMachine;
@@ -21,7 +20,8 @@ public class Main {
             System.out.println(elem);
         }
 
-
+        // MainFrame myFrame = new MainFrame();
+        // myFrame.initialize();
     }
 
     private static List<Product> getProducts() {
