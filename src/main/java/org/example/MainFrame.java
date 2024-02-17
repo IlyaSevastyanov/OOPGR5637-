@@ -7,11 +7,8 @@ import javax.swing.*;
 
 public class MainFrame extends JFrame {
 
-
     final private Font mainFont = new Font("Segoe print", Font.BOLD, 18);
     JTextField tfFirstName, tfLastName;
-
-
     JLabel lbWelcome;
 
     public void initialize() {
