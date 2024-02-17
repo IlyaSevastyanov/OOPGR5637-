@@ -28,5 +28,8 @@ public class Main {
         for (Product elem : machine.getProducts()) {
             System.out.println(elem);
         }
+        MainFrame myFrame = new MainFrame();
+        myFrame.initialize();
     }
+
 }
