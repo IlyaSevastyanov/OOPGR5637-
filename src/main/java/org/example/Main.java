@@ -15,13 +15,13 @@ public class Main {
         Holder holder = new Holder(4,4);
         Display display = new Display();
         CoinDispenser dispenser = new CoinDispenser(0);
-        VendingMachine machine = new VendingMachine(holder, display, dispenser, ourlist);
+        VendingMachine machine = new VendingMachine(holder, dispenser, ourlist, display);
         for (Product elem : machine.getProducts()) {
             System.out.println(elem);
         }
 
-        // MainFrame myFrame = new MainFrame();
-        // myFrame.initialize();
+        //MainFrame myFrame = new MainFrame();
+        //myFrame.initialize();
     }
 
     private static List<Product> getProducts() {
