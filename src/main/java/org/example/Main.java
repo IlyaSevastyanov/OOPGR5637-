@@ -1,28 +1,27 @@
 package org.example;
-
 import domen.Bottle;
 import domen.HotDrink;
 import domen.Product;
-import services.CoinDespender;
+import services.CoinDispenser;
+import services.CoinDispenser;
 import services.Display;
 import services.Holder;
 import services.VendingMachine;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         List<Product> ourlist = getProducts();
-        Holder holder = new Holder();
+        Holder holder = new Holder(4,4);
         Display display = new Display();
-        CoinDespender despender = new CoinDespender();
-        VendingMachine machine = new VendingMachine(holder, display, despender, ourlist);
+        CoinDispenser dispenser = new CoinDispenser(0);
+        VendingMachine machine = new VendingMachine(holder, display, dispenser, ourlist);
         for (Product elem : machine.getProducts()) {
             System.out.println(elem);
         }
-        MainFrame myFrame = new MainFrame();
-        myFrame.initialize();
+
+
     }
 
     private static List<Product> getProducts() {

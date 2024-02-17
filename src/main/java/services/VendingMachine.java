@@ -7,14 +7,26 @@ import java.util.List;
 public class VendingMachine {
     private Holder holder;
     private Display display;
-    private CoinDespender coinDespender;
+    private CoinDispenser coinDispenser;
     private List<Product> products;
 
-    public VendingMachine(Holder holder, Display display, CoinDespender coinDespender, List<Product> products) {
+    public VendingMachine(Holder holder, Display display, CoinDispenser coinDispenser, List<Product> products) {
         this.holder = holder;
         this.display = display;
-        this.coinDespender = coinDespender;
+        this.coinDispenser = coinDispenser;
         this.products = products;
+    }
+
+
+    /**
+     * @param product обьект добавляемого продукта
+     * @apiNote добавление продукта в аппарат
+     */
+    public void addProduct(Product product) {
+        if (product.getPrice() <= 0) {
+            product.setPrice(100);
+        }
+        this.products.add(product);
     }
 
     public Holder getHolder() {
@@ -33,12 +45,12 @@ public class VendingMachine {
         this.display = display;
     }
 
-    public CoinDespender getCoinDespender() {
-        return coinDespender;
+    public CoinDispenser getCoinDispenser() {
+        return coinDispenser;
     }
 
-    public void setCoinDespender(CoinDespender coinDespender) {
-        this.coinDespender = coinDespender;
+    public void setCoinDispenser(CoinDispenser coinDispenser) {
+        this.coinDispenser = coinDispenser;
     }
 
     public List<Product> getProducts() {
@@ -54,19 +66,8 @@ public class VendingMachine {
         return "VendingMachine{" +
                 "holder=" + holder +
                 ", display=" + display +
-                ", coinDespender=" + coinDespender +
+                ", coinDispenser=" + coinDispenser +
                 ", products=" + products +
                 '}';
-    }
-
-    /**
-     * @param product обьект добавляемого продукта
-     * @apiNote добавление продукта в аппарат
-     */
-    public void addProduct(Product product) {
-        if (product.getPrice() <= 0) {
-            product.setPrice(100);
-        }
-        this.products.add(product);
     }
 }
